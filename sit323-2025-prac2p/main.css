@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  /* why it doesn't keep to the left of the screen
+  margin-left: 0;
+  padding-left: 0; */
+}
+
+#banner img {
+  /* why it can't take the whole width? */
+  /* width: 100%; */
+  width: 960px;
+}
+
+#profile .text-center {
+  margin-top: 20px;
+}
+
+#profile .image {
+  margin: 10px;
+  border-radius: 50%;
+  width: 150px;
+}
+
+#profile hr {
+  width: 30%;
+  height: 2px;
+  margin: auto;
+  /* background color is need in order to adjust height */
+  background-color: darkcyan;
+  color: darkcyan;
+}
+
+#profile h3 {
+  margin-top: 10px;
+  font-size: medium;
+}
+
+#project .image {
+  border-radius: 20%;
+  width: 100%;
+  height: auto;
+}
+
+#project .container-xs {
+  padding-top: 20px;
+  max-width: 200px;
+}
+
+#project p {
+  align-self: center;
+  padding-left: 20px;
+}
+
+/*use flex box to make side by side pictures*/
+.row {
+  display: flex;
+}
