@@ -157,6 +157,10 @@ app.get('/modulo', (req, res) => {
       throw new Error('Parsing Error')
     }
 
+    if (n2 === 0) {
+      throw new Error('denominator cannot be zero')
+    }
+
     const result = modulo(n1, n2)
 
     res.status(200).json({ statuscocde: 200, data: result })
@@ -183,6 +187,11 @@ app.get('/exponent', (req, res) => {
       throw new Error('Parsing Error')
     }
 
+    if (n1 < 0 && !Number.isInteger(n2)) {
+      throw new Error(
+        'Negative base with a non-integer exponent results in an invalid operation'
+      )
+    }
     const result = exponent(n1, n2)
 
     res.status(200).json({ statuscocde: 200, data: result })
@@ -203,6 +212,10 @@ app.get('/squareRoot', (req, res) => {
     if (n1 === NaN) {
       console.log()
       throw new Error('Parsing Error')
+    }
+
+    if (n1 < 0) {
+      throw new Error('Square root of negative number is not allowed')
     }
 
     const result = squareRoot(n1)
